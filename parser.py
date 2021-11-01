@@ -20,3 +20,15 @@ def file_dir(args):
         if files:
             rg = re.compile(args.end)
             return [args.p + '/' + p for p in os.listdir(path=args.p) if os.path.isfile(args.p + '/' + p) and re.match(p)]
+
+
+def read(file_path):
+    with open (file_path, 'r') as f:   #функция находит файл по пути и возвращает все строки файла
+        return f.read()
+
+def new_file():
+    filename = 'newlog.log'
+    with open(filename, 'a') as f:
+        f.write('_')
+
+
